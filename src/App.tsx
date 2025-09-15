@@ -10,6 +10,9 @@ import HomePage from "./pages/MSPROHome";
 import ServicesPage from "./pages/MSPROServices";
 import ServiceDetailPage from "./pages/MSPROServiceDetail";
 import ContactsPage from "./pages/MSPROContacts";
+import About from "./pages/About";
+import Cases from "./pages/Cases";
+import CaseDetail from "./pages/CaseDetail";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +26,9 @@ const App = () => (
           <Route path="/" element={<HomePage />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/services/:slug" element={<ServiceDetailPage />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/cases" element={<Cases />} />
+          <Route path="/cases/:slug" element={<CaseDetail />} />
           <Route path="/contacts" element={<ContactsPage />} />
           <Route path="/demo" element={<Index />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
