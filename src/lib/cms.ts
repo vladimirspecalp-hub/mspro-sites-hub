@@ -23,25 +23,6 @@ export const ServiceSchema = z.object({
 
 export type Service = z.infer<typeof ServiceSchema>;
 
-// Case Study Schema
-export const CaseStudySchema = z.object({
-  title: z.string(),
-  slug: z.string(),
-  excerpt: z.string(),
-  content: z.string(),
-  category: z.string(),
-  cover: z.string().optional(),
-  gallery: z.array(z.string()).optional(),
-  location: z.string().optional(),
-  team_size: z.number().optional(),
-  duration: z.string().optional(),
-  technologies: z.array(z.string()).optional(),
-  client: z.string().optional(),
-  updatedAt: z.string()
-});
-
-export type CaseStudy = z.infer<typeof CaseStudySchema>;
-
 // Content Management System
 export class CMS {
   private static services: Service[] = [
@@ -132,52 +113,6 @@ export class CMS {
     }
   ];
 
-  // Mock cases data
-  private static cases: CaseStudy[] = [
-    {
-      title: "Антикоррозийная защита бизнес-центра в Москве",
-      slug: "business-center-moscow",
-      excerpt: "Комплексная защита металлоконструкций 32-этажного бизнес-центра с применением современных технологий пескоструйной обработки и двухкомпонентных систем покрытий.",
-      content: `Проект включал в себя полную антикоррозийную защиту металлоконструкций нового бизнес-центра общей площадью более 150,000 м².
-
-Выполненные работы:
-- Пескоструйная обработка до степени Sa 2.5
-- Нанесение грунтовочных составов методом безвоздушного распыления
-- Финишное покрытие эпоксидными эмалями
-- Контроль качества с применением толщиномеров
-
-Проект был завершен в срок с соблюдением всех требований заказчика и строительных норм.`,
-      category: "Антикоррозийная защита",
-      cover: "/images/placeholders/case-placeholder.webp",
-      location: "Москва",
-      team_size: 15,
-      duration: "4 месяца",
-      client: "ООО 'СтройИнвест'",
-      updatedAt: "2025-09-10"
-    },
-    {
-      title: "Реконструкция моста в Санкт-Петербурге",
-      slug: "bridge-spb",
-      excerpt: "Высотные работы по реконструкции автомобильного моста с применением промышленного альпинизма для доступа к труднодоступным участкам конструкций.",
-      content: `Масштабный проект по реконструкции автомобильного моста через Неву с использованием технологий промышленного альпинизма.
-
-Особенности проекта:
-- Работы на высоте до 45 метров
-- Сложные погодные условия
-- Ограниченное время на выполнение работ
-- Высокие требования к безопасности
-
-Все работы были выполнены с применением сертифицированного альпинистского снаружения и под контролем опытных руководителей работ.`,
-      category: "Промышленный альпинизм",
-      cover: "/images/placeholders/case-placeholder.webp",
-      location: "Санкт-Петербург",
-      team_size: 8,
-      duration: "2 месяца",
-      client: "Комитет по развитию транспортной инфраструктуры",
-      updatedAt: "2025-08-15"
-    }
-  ];
-
   static async getServices(): Promise<Service[]> {
     return this.services;
   }
@@ -210,35 +145,5 @@ export class CMS {
 
   static getCategories(): string[] {
     return [...new Set(this.services.map(s => s.category))];
-  }
-
-  // Case studies methods
-  static getCases(): CaseStudy[] {
-    return this.cases;
-  }
-
-  static getCaseBySlug(slug: string): CaseStudy | null {
-    return this.cases.find(caseStudy => caseStudy.slug === slug) || null;
-  }
-
-  static async createCase(caseStudy: Omit<CaseStudy, 'updatedAt'>): Promise<CaseStudy> {
-    const newCase: CaseStudy = {
-      ...caseStudy,
-      updatedAt: new Date().toISOString().split('T')[0]
-    };
-    this.cases.push(newCase);
-    return newCase;
-  }
-
-  static async updateCase(slug: string, updates: Partial<CaseStudy>): Promise<CaseStudy | null> {
-    const index = this.cases.findIndex(caseStudy => caseStudy.slug === slug);
-    if (index === -1) return null;
-    
-    this.cases[index] = {
-      ...this.cases[index],
-      ...updates,
-      updatedAt: new Date().toISOString().split('T')[0]
-    };
-    return this.cases[index];
   }
 }

@@ -1,4 +1,4 @@
-import { Service, CaseStudy } from './cms';
+import { Service } from './cms';
 
 export interface SEOData {
   title: string;
@@ -40,20 +40,6 @@ export class SEOManager {
       canonical: `${this.siteUrl}${path}`,
       ogImage: ogImage || '/images/og-default.webp',
       ogType: 'website'
-    };
-  }
-
-  static generateCaseSEO(caseStudy: CaseStudy): SEOData {
-    const title = `${caseStudy.title} | Кейс MSPRO`;
-    const description = `${caseStudy.excerpt} Реальный проект компании MSPRO с фотографиями и подробностями выполнения.`;
-    
-    return {
-      title: title.slice(0, 60),
-      description: description.slice(0, 160),
-      canonical: `${this.siteUrl}/cases/${caseStudy.slug}`,
-      ogImage: caseStudy.cover,
-      ogType: 'article',
-      schema: this.generateCaseSchema(caseStudy)
     };
   }
 
@@ -109,31 +95,6 @@ export class SEOManager {
           'text': item.a
         }
       }))
-    };
-  }
-
-  private static generateCaseSchema(caseStudy: CaseStudy) {
-    return {
-      '@context': 'https://schema.org',
-      '@type': 'Article',
-      'headline': caseStudy.title,
-      'description': caseStudy.excerpt,
-      'image': caseStudy.cover,
-      'author': {
-        '@type': 'Organization',
-        'name': 'MSPRO'
-      },
-      'publisher': {
-        '@type': 'Organization',
-        'name': 'MSPRO',
-        'url': this.siteUrl
-      },
-      'datePublished': caseStudy.updatedAt,
-      'dateModified': caseStudy.updatedAt,
-      'mainEntityOfPage': {
-        '@type': 'WebPage',
-        '@id': `${this.siteUrl}/cases/${caseStudy.slug}`
-      }
     };
   }
 }

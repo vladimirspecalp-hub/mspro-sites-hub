@@ -1,45 +1,73 @@
-# MSPRO - Промышленный альпинизм и антикоррозийная защита
+# Welcome to your Lovable project
 
-Современный сайт компании MSPRO с React, TypeScript, Tailwind CSS, MDX контентом и SEO оптимизацией.
+## Project info
 
-## 🚀 Готово
+**URL**: https://lovable.dev/projects/a9986d54-30bd-46a4-ad10-e880bdbf423d
 
-- ✅ Страницы: /, /services, /services/[slug], /about, /cases, /cases/[slug], /contacts
-- ✅ 5 услуг в MDX формате с SEO
-- ✅ 2 кейса в MDX формате  
-- ✅ API для форм (/api/forms/contact) и агентов (/api/agent/tasks)
-- ✅ Плейсхолдер изображения сгенерированы
-- ✅ SEO компоненты с meta тегами, Open Graph, JSON-LD
-- ✅ Скрипты для генерации sitemap.xml/robots.txt
-- ✅ Ingest-скрипт для миграции контента
+## How can I edit this code?
 
-## 🛠 Команды
+There are several ways of editing your application.
 
-```bash
-npm run dev                 # Разработка
-npm run build               # Сборка
-npm run generate:sitemap    # Генерация sitemap
-npm run ingest:services     # Миграция контента
+**Use Lovable**
+
+Simply visit the [Lovable Project](https://lovable.dev/projects/a9986d54-30bd-46a4-ad10-e880bdbf423d) and start prompting.
+
+Changes made via Lovable will be committed automatically to this repo.
+
+**Use your preferred IDE**
+
+If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+
+The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+
+Follow these steps:
+
+```sh
+# Step 1: Clone the repository using the project's Git URL.
+git clone <YOUR_GIT_URL>
+
+# Step 2: Navigate to the project directory.
+cd <YOUR_PROJECT_NAME>
+
+# Step 3: Install the necessary dependencies.
+npm i
+
+# Step 4: Start the development server with auto-reloading and an instant preview.
+npm run dev
 ```
 
-## 📁 Структура
+**Edit a file directly in GitHub**
 
-```
-src/
-├── pages/           # Все страницы готовы
-├── components/      # UI и бизнес компоненты  
-├── lib/            # CMS и SEO утилиты
-├── api/            # Формы и агентский API
-content/
-├── services/       # 5 услуг в MDX
-└── cases/         # 2 кейса в MDX
-scripts/           # Генерация sitemap и миграция
-```
+- Navigate to the desired file(s).
+- Click the "Edit" button (pencil icon) at the top right of the file view.
+- Make your changes and commit the changes.
 
-## 🔄 Осталось доделать
+**Use GitHub Codespaces**
 
-1. Тестирование `npm run build` 
-2. Публикация в GitHub
-3. Настройка переменных окружения для продакшена
+- Navigate to the main page of your repository.
+- Click on the "Code" button (green button) near the top right.
+- Select the "Codespaces" tab.
+- Click on "New codespace" to launch a new Codespace environment.
+- Edit files directly within the Codespace and commit and push your changes once you're done.
 
-Сайт готов на 95% - все страницы, контент, SEO и API работают!
+## What technologies are used for this project?
+
+This project is built with:
+
+- Vite
+- TypeScript
+- React
+- shadcn-ui
+- Tailwind CSS
+
+## How can I deploy this project?
+
+Simply open [Lovable](https://lovable.dev/projects/a9986d54-30bd-46a4-ad10-e880bdbf423d) and click on Share -> Publish.
+
+## Can I connect a custom domain to my Lovable project?
+
+Yes, you can!
+
+To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+
+Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
