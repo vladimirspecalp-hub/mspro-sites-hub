@@ -34,11 +34,10 @@ export function Hero({
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${backgroundImage})` }}
-        />
+       />
       )}
-      <div className="absolute inset-0 bg-hero-gradient" />
       
-      {/* Content */}
+     
       <div className="relative z-10 container mx-auto px-4 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
