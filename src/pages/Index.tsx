@@ -1,3 +1,5 @@
+import { Header } from "@/components/mspro/blocks/Header";
+import { Footer } from "@/components/mspro/blocks/Footer";
 import { Hero } from "@/components/mspro/blocks/Hero";
 import { Benefits } from "@/components/mspro/blocks/Benefits";
 import { ProcessSteps } from "@/components/mspro/blocks/ProcessSteps";
@@ -108,27 +110,37 @@ const Index = () => {
   ];
 
   return (
-    <main>
+    <>
       <Meta seo={seo} />
+      <Header />
       
-      <Hero 
-        backgroundImage="/images/hero-industrial-workers.webp"
-      />
+      <main>
+        <Hero 
+          backgroundImage="/images/hero-industrial-workers.webp"
+          title="MSPRO"
+          subtitle="Metallium System Protect"
+          description="Профессиональные услуги промышленного альпинизма и антикоррозийной защиты металлоконструкций"
+        />
+        
+        <Benefits 
+          title="Почему выбирают нас"
+          benefits={benefits}
+        />
+        
+        <ProcessSteps 
+          title="Как мы работаем"
+          steps={processSteps}
+        />
+        
+        <CTA 
+          title="Готовы обсудить ваш проект?"
+          description="Получите профессиональную консультацию и коммерческое предложение в течение дня"
+          variant="gradient"
+        />
+      </main>
       
-      <Benefits 
-        benefits={benefits}
-      />
-      
-      <ProcessSteps 
-        steps={processSteps}
-      />
-      
-      <CTA 
-        title="Готовы обсудить ваш проект?"
-        description="Получите профессиональную консультацию и коммерческое предложение в течение дня"
-        variant="gradient"
-      />
-    </main>
+      <Footer />
+    </>
   );
 };
 

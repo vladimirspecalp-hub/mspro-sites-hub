@@ -36,7 +36,7 @@ export function Hero({
           style={{ backgroundImage: `url(${backgroundImage})` }}
         />
       )}
-      <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/70 to-background/50" />
+      <div className="absolute inset-0 bg-hero-gradient" />
       
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center">
@@ -46,29 +46,29 @@ export function Hero({
           transition={{ duration: 0.6 }}
           className="max-w-4xl mx-auto space-y-6"
         >
-          <motion.p 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.1, duration: 0.6 }}
-            className="text-lg text-primary font-semibold"
-          >
-            {subtitle}
-          </motion.p>
-          
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            className="text-4xl md:text-6xl font-bold leading-tight"
+            transition={{ delay: 0.1, duration: 0.6 }}
+            className="text-5xl md:text-7xl font-bold font-metro leading-tight"
           >
-            {title}
+            <span className="text-brand-gradient">{title}</span>
           </motion.h1>
+          
+          <motion.p 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            className="text-xl md:text-2xl font-intro font-medium text-white mb-6 uppercase tracking-wider"
+          >
+            {subtitle}
+          </motion.p>
           
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            className="text-xl text-muted-foreground max-w-2xl mx-auto"
+            className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto font-metro"
           >
             {description}
           </motion.p>
@@ -79,7 +79,7 @@ export function Hero({
             transition={{ delay: 0.4, duration: 0.6 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6"
           >
-            <Button size="lg" asChild className="group">
+            <Button size="lg" variant="brand" asChild className="group shadow-lg">
               <a href={primaryAction.href}>
                 <Phone className="mr-2 h-5 w-5" />
                 {primaryAction.text}
@@ -87,7 +87,7 @@ export function Hero({
               </a>
             </Button>
             
-            <Button size="lg" variant="outline" asChild>
+            <Button size="lg" variant="outline" asChild className="border-white text-white hover:bg-white hover:text-primary">
               <a href={secondaryAction.href}>
                 {secondaryAction.text}
               </a>

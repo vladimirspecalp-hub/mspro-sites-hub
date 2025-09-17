@@ -47,6 +47,10 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // MSPRO Brand Colors
+        'mspro-dark': "hsl(var(--mspro-dark-red))",
+        'mspro-bright': "hsl(var(--mspro-bright-red))",
+        'mspro-light': "hsl(var(--mspro-red-light))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -58,10 +62,18 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
       },
+      fontFamily: {
+        'metro': ['Roboto Condensed', 'sans-serif'],
+        'intro': ['Space Grotesk', 'sans-serif'],
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      backgroundImage: {
+        'brand-gradient': 'var(--gradient-brand)',
+        'hero-gradient': 'var(--gradient-hero)',
       },
       keyframes: {
         "accordion-down": {
