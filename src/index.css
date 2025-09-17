@@ -45,7 +45,7 @@ All colors MUST be HSL.
     
     /* Gradients */
     --gradient-brand: linear-gradient(135deg, hsl(var(--mspro-dark-red)), hsl(var(--mspro-bright-red)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--mspro-dark-red) / 0.9), hsl(var(--mspro-bright-red) / 0.8));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--mspro-dark-red) / 0.5), hsl(var(--mspro-bright-red) / 0.3));
 
     --sidebar-background: 0 0% 98%;
 
