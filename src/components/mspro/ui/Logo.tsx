@@ -14,8 +14,8 @@ export function Logo({ variant = "light", size = "md", className }: LogoProps) {
   };
 
   const logoSrc = {
-    light: "/images/logo-light.png",
-    dark: "/images/logo-dark.png", 
+    light: "/images/logo-horizontal-dark.png",
+    dark: "/images/logo-horizontal-dark.png", 
     icon: "/images/logo-icon.jpeg"
   };
 
