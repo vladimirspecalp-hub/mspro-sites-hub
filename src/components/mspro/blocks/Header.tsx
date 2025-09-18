@@ -33,11 +33,11 @@ export function Header() {
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-1">
                 <Phone className="h-3 w-3" />
-                <span>+7 (123) 456-78-90</span>
+                <span>+7(903)335-45-35</span>
               </div>
               <div className="flex items-center space-x-1">
                 <Mail className="h-3 w-3" />
-                <span>info@mspro.ru</span>
+                <span>specalp@ya.ru</span>
               </div>
             </div>
             <div className="hidden md:block">

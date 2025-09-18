@@ -76,7 +76,8 @@ export function Footer() {
               <div className="flex items-start space-x-2">
                 <Phone className="h-4 w-4 mt-0.5 flex-shrink-0" />
                 <div className="text-sm">
-                  <div>+7 (123) 456-78-90</div>
+                  <div>+7(903)335-45-35</div>
+                  <div>+7(937)205-23-11</div>
                   <div className="text-primary-foreground/80">Звонки принимаются</div>
                 </div>
               </div>
@@ -84,7 +85,7 @@ export function Footer() {
               <div className="flex items-start space-x-2">
                 <Mail className="h-4 w-4 mt-0.5 flex-shrink-0" />
                 <div className="text-sm">
-                  <div>info@mspro.ru</div>
+                  <div>specalp@ya.ru</div>
                   <div className="text-primary-foreground/80">Ответим в течение часа</div>
                 </div>
               </div>
@@ -92,8 +93,8 @@ export function Footer() {
               <div className="flex items-start space-x-2">
                 <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
                 <div className="text-sm">
-                  <div>г. Москва</div>
-                  <div className="text-primary-foreground/80">ул. Промышленная, 15</div>
+                  <div>г. Самара, пр-кт Кирова, д. 275</div>
+                  <div className="text-primary-foreground/80">комната 3, офис 29</div>
                 </div>
               </div>
               

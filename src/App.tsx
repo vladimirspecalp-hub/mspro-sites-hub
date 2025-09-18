@@ -4,8 +4,10 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
+import MSPROAbout from "./pages/MSPROAbout";
+import MSPROServices from "./pages/MSPROServices";
 import NotFound from "./pages/NotFound";
-// MSPRO Pages
+// Legacy MSPRO Pages
 import HomePage from "./pages/MSPROHome";
 import ServicesPage from "./pages/MSPROServices";
 import ServiceDetailPage from "./pages/MSPROServiceDetail";
@@ -23,9 +25,9 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/services" element={<ServicesPage />} />
-          <Route path="/services/:slug" element={<ServiceDetailPage />} />
+          <Route path="/" element={<Index />} />
+          <Route path="/about" element={<MSPROAbout />} />
+          <Route path="/services" element={<MSPROServices />} />
           <Route path="/about" element={<About />} />
           <Route path="/cases" element={<Cases />} />
           <Route path="/cases/:slug" element={<CaseDetail />} />
