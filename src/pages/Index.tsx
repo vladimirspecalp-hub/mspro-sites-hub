@@ -1,6 +1,6 @@
 import { Header } from "@/components/mspro/blocks/Header";
 import { Footer } from "@/components/mspro/blocks/Footer";
-import { Hero } from "@/components/mspro/blocks/Hero";
+import { HeroCarousel } from "@/components/mspro/blocks/HeroCarousel";
 import { Benefits } from "@/components/mspro/blocks/Benefits";
 import { ProcessSteps } from "@/components/mspro/blocks/ProcessSteps";
 import { CTA } from "@/components/mspro/blocks/CTA";
@@ -115,11 +115,9 @@ const Index = () => {
       <Header />
       
       <main>
-        <Hero 
-          backgroundImage="/images/hero-industrial-workers.webp"
-          title="MSPRO"
-          subtitle="Metallium System Protect"
-          description="Профессиональные услуги промышленного альпинизма и антикоррозийной защиты металлоконструкций"
+        <HeroCarousel 
+          primaryAction={{ text: "Получить консультацию", href: "/contacts" }}
+          secondaryAction={{ text: "Наши услуги", href: "/services" }}
         />
         
         <Benefits 
