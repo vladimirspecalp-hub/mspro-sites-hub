@@ -6,6 +6,28 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
 import { Send, Phone, Mail, MapPin } from 'lucide-react';
+import { z } from 'zod';
+
+const contactFormSchema = z.object({
+  name: z.string()
+    .trim()
+    .min(2, 'Имя должно содержать минимум 2 символа')
+    .max(100, 'Имя слишком длинное'),
+  phone: z.string()
+    .trim()
+    .regex(/^\+?[0-9\s()-]{10,20}$/, 'Неверный формат телефона'),
+  email: z.string()
+    .trim()
+    .email('Неверный формат email')
+    .max(255)
+    .optional()
+    .or(z.literal('')),
+  message: z.string()
+    .trim()
+    .max(2000, 'Сообщение слишком длинное')
+    .optional()
+    .or(z.literal(''))
+});
 
 interface ContactFormProps {
   title?: string;
@@ -31,14 +53,23 @@ export function ContactForm({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validate form data
+    const result = contactFormSchema.safeParse(formData);
+    if (!result.success) {
+      toast({
+        variant: "destructive",
+        title: "Ошибка валидации",
+        description: result.error.errors[0].message,
+      });
+      return;
+    }
+
     setIsLoading(true);
 
     try {
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // Here would be actual API call to /api/forms/contact
-      console.log('Form submitted:', formData);
       
       toast({
         title: "Заявка отправлена!",

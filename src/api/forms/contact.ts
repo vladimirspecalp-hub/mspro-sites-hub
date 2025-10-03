@@ -16,14 +16,17 @@ export const submitContactForm = async (data: ContactFormData): Promise<{ ok: bo
       return { ok: false, message: 'Spam detected' };
     }
 
-    // Симуляция отправки (в реальном проекте здесь будет SMTP/Telegram API)
+    // Симуляция отправки (в реальном проекте здесь будет Edge Function)
     const response = await fetch('/api/forms/contact', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        ...data,
+        name: data.name,
+        phone: data.phone,
+        email: data.email,
+        message: data.message,
         timestamp: Date.now(),
         source: 'mspro-site'
       })
@@ -35,7 +38,10 @@ export const submitContactForm = async (data: ContactFormData): Promise<{ ok: bo
       throw new Error('Server error');
     }
   } catch (error) {
-    console.error('Contact form error:', error);
+    // Only log in development
+    if (import.meta.env.DEV) {
+      console.error('Contact form error:', error);
+    }
     return { ok: false, message: 'Ошибка отправки. Попробуйте позже.' };
   }
 };

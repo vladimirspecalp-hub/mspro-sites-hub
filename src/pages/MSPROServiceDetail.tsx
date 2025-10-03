@@ -13,6 +13,7 @@ import { CTA } from '@/components/mspro/blocks/CTA';
 import { motion } from 'framer-motion';
 import { ArrowLeft, MapPin, Clock, Shield, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import ReactMarkdown from 'react-markdown';
 
 export default function ServiceDetailPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -156,8 +157,9 @@ export default function ServiceDetailPage() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
             className="prose prose-lg max-w-none mb-16"
-            dangerouslySetInnerHTML={{ __html: service.content.replace(/##/g, '<h2>').replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>') }}
-          />
+          >
+            <ReactMarkdown>{service.content}</ReactMarkdown>
+          </motion.div>
         )}
 
         {/* Gallery */}

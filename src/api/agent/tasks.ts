@@ -26,14 +26,16 @@ export const processAgentTask = async (task: AgentTask, token: string): Promise<
       return { ok: false, message: 'Invalid agent token' };
     }
 
-    // Логирование задачи
-    const logEntry = {
-      timestamp: new Date().toISOString(),
-      task: task.type,
-      slug: task.payload.slug,
-      status: 'processing'
-    };
-    console.log('Agent task:', logEntry);
+    // Логирование задачи (только в разработке)
+    if (import.meta.env.DEV) {
+      const logEntry = {
+        timestamp: new Date().toISOString(),
+        task: task.type,
+        slug: task.payload.slug,
+        status: 'processing'
+      };
+      console.log('Agent task:', logEntry);
+    }
 
     // В реальном проекте здесь будет создание MDX файлов
     switch (task.type) {
@@ -59,7 +61,9 @@ export const processAgentTask = async (task: AgentTask, token: string): Promise<
     };
 
   } catch (error) {
-    console.error('Agent task error:', error);
+    if (import.meta.env.DEV) {
+      console.error('Agent task error:', error);
+    }
     return { ok: false, message: 'Task processing failed' };
   }
 };
