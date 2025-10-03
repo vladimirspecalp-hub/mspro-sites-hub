@@ -31,10 +31,12 @@ export function Hero({
     <section className={`relative min-h-[80vh] flex items-center justify-center overflow-hidden ${className}`}>
       {/* Background */}
       {backgroundImage && (
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${backgroundImage})` }}
-       />
+        <img 
+          src={backgroundImage}
+          alt="MSPRO промышленный альпинизм и антикоррозийная защита"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          fetchPriority="high"
+        />
       )}
       
      
