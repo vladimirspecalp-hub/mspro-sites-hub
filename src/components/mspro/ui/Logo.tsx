@@ -19,10 +19,18 @@ export function Logo({ variant = "light", size = "md", className }: LogoProps) {
     icon: "/images/logo-icon.jpeg"
   };
 
+  const dimensions = {
+    sm: { width: 71, height: 32 },
+    md: { width: 107, height: 48 },
+    lg: { width: 143, height: 64 }
+  };
+
   return (
     <img 
       src={logoSrc[variant]}
       alt="MSPRO - Metallium System Protect"
+      width={dimensions[size].width}
+      height={dimensions[size].height}
       className={cn(
         "object-contain",
         sizeClasses[size],
