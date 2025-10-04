@@ -1,0 +1,56 @@
+# MSPro Brand Summary (оперативная выжимка под ИИ и фронт)
+
+[IDENTITY]
+brand_name=MSPro (Metallium System Protect)
+primary_domain=mspro-ltd.ru
+assets_dir=/public/brend
+
+[COLORS]
+# Извлечь из /public/brend/colors.png или брендбука.
+primary=TODO
+secondary=TODO
+accent=TODO
+bg=TODO
+text_primary=TODO
+note=При недостаточном контрасте для hero использовать overlay 30–40%.
+
+[TYPOGRAPHY]
+font_family_primary=TODO (название из брендбука)
+weights=400,500,700
+fonts_path=/public/brend/fonts/
+fonts_files=TODO (перечислить .woff2)
+load_rule=Использовать только next/font/local (без внешних CDN)
+
+[LOGOS]
+logos_path=/public/brend/
+logo_main=/public/brend/logo-main.svg
+logo_inverse=/public/brend/logo-white.svg
+logo_icon=TODO (если есть)
+min_width_px=TODO
+clear_space=TODO
+
+[PHOTOS]
+# Реальные фото и сгенерированные помечайте, чтобы ИИ не путал в кейсах.
+# формат: путь|type(real|generated)|alt|overlay%
+/public/brend/hero-01.jpg|real|Промальпинисты MSPro на высоте|35
+/public/brend/hero-02.jpg|real|Антикоррозийная защита металлоконструкций|30
+
+[TEMPLATES]
+brandbook=/public/brend/MSPRO_брендбук.pdf
+letterhead=/public/brend/mspro_letterhead.docx
+other=TODO
+
+[USAGE_RULES]
+buttons_primary=bg:primary; text:white; hover:darken 8–12%
+cards_radius=TODO; shadows=soft
+hero_text_legibility=overlay 30–40% или text-shadow
+alt_policy=осмысленные alt на русском (без переспама ключами)
+
+[LEGAL]
+asset_source=Logaster + оригинальные фото MSPro
+license_fonts=локальный хостинг разрешён (по документам)
+copyright=© MSPro
+
+[SEO]
+locale=ru-RU
+structured_data=Organization, LocalBusiness, Service, FAQ, Breadcrumb
