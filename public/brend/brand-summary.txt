@@ -36,7 +36,7 @@ clear_space=TODO
 /public/brend/hero-02.jpg|real|Антикоррозийная защита металлоконструкций|30
 
 [TEMPLATES]
-brandbook=/public/brend/MSPRO_брендбук.pdf
+brandbook=/public/brend/brandbook_created_by_logaster.pdf
 letterhead=/public/brend/mspro_letterhead.docx
 other=TODO
 
